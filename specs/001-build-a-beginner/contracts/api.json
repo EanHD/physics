@@ -1,0 +1,204 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Quantum Mechanics Study App - Client-side API",
+    "description": "Local API contracts for PWA functionality",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/modules": {
+      "get": {
+        "summary": "Get all available modules",
+        "responses": {
+          "200": {
+            "description": "List of study modules",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Module"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/modules/{moduleId}": {
+      "get": {
+        "summary": "Get module content",
+        "parameters": [
+          {
+            "name": "moduleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Module content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModuleContent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/progress": {
+      "get": {
+        "summary": "Get user progress",
+        "responses": {
+          "200": {
+            "description": "User progress data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserProgress"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Update user progress",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgressUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Progress updated successfully"
+          }
+        }
+      }
+    },
+    "/api/reviews": {
+      "get": {
+        "summary": "Get scheduled reviews",
+        "responses": {
+          "200": {
+            "description": "List of modules due for review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReviewItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Module": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "estimated_minutes": {"type": "integer"},
+          "prerequisites": {"type": "array", "items": {"type": "string"}},
+          "tags": {"type": "array", "items": {"type": "string"}},
+          "difficulty": {"type": "string", "enum": ["beginner", "intermediate", "advanced"]}
+        }
+      },
+      "ModuleContent": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "content": {"type": "string"},
+          "quiz": {"$ref": "#/components/schemas/Quiz"},
+          "resources": {"type": "array", "items": {"$ref": "#/components/schemas/Resource"}}
+        }
+      },
+      "Quiz": {
+        "type": "object",
+        "properties": {
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {"type": "string"},
+                "question": {"type": "string"},
+                "type": {"type": "string", "enum": ["multiple_choice", "true_false", "short_answer"]},
+                "options": {"type": "array", "items": {"type": "string"}},
+                "correct_answer": {"type": "string"},
+                "explanation": {"type": "string"}
+              }
+            }
+          }
+        }
+      },
+      "Resource": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "link": {"type": "string"},
+          "category": {"type": "string"}
+        }
+      },
+      "UserProgress": {
+        "type": "object",
+        "properties": {
+          "user_id": {"type": "string"},
+          "completed_modules": {"type": "array", "items": {"type": "string"}},
+          "module_states": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "status": {"type": "string", "enum": ["not-started", "in-progress", "completed"]},
+                "last_accessed": {"type": "string", "format": "date-time"},
+                "score": {"type": "number"},
+                "attempts": {"type": "integer"}
+              }
+            }
+          },
+          "study_streak": {"type": "integer"},
+          "total_study_time": {"type": "integer"}
+        }
+      },
+      "ProgressUpdate": {
+        "type": "object",
+        "properties": {
+          "module_id": {"type": "string"},
+          "status": {"type": "string", "enum": ["not-started", "in-progress", "completed"]},
+          "score": {"type": "number"},
+          "time_spent": {"type": "integer"}
+        }
+      },
+      "ReviewItem": {
+        "type": "object",
+        "properties": {
+          "module_id": {"type": "string"},
+          "next_review": {"type": "string", "format": "date-time"},
+          "interval_days": {"type": "integer"},
+          "ease_factor": {"type": "number"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+export { HomePage } from './HomePage'
+export { ModulesPage } from './ModulesPage'
+export { ModuleDetailPage } from './ModuleDetailPage'
+export { ProgressPage } from './ProgressPage'
+export { ReviewsPage } from './ReviewsPage'
+export { SettingsPage } from './SettingsPage'

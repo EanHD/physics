@@ -1,0 +1,37 @@
+[
+  {
+    "id": "calculus-1",
+    "name": "MIT OpenCourseWare: Single Variable Calculus (18.01SC)",
+    "description": "A complete course covering differentiation and integration of functions of one variable. It includes lecture videos, notes, problem sets, exams and interactive applets. Ideal for self‑study and review.",
+    "link": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+    "category": "calculus"
+  },
+  {
+    "id": "linear-algebra-2",
+    "name": "MIT OpenCourseWare: Linear Algebra (18.06)",
+    "description": "An introductory course on matrix theory and linear algebra. Topics include systems of equations, vector spaces, determinants, eigenvalues, similarity and positive‑definite matrices.",
+    "link": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+    "category": "linear-algebra"
+  },
+  {
+    "id": "differential-equations-3",
+    "name": "Paul’s Online Math Notes (Lamar University)",
+    "description": "A comprehensive site offering free notes for Calculus I–III and Differential Equations. Each chapter includes worked examples, explanations and practice problems.",
+    "link": "https://tutorial.math.lamar.edu/",
+    "category": "differential-equations"
+  },
+  {
+    "id": "classical-mechanics-and-electromagnetism-4",
+    "name": "Feynman Lectures on Physics – Volume I (Mechanics), Volume II (Electromagnetism), Volume III (Quantum Mechanics)",
+    "description": "Caltech hosts a high‑quality online edition of Feynman, Leighton & Sands’s classic lectures. The volumes are free to read online and cover mechanics, radiation, heat, electromagnetism, matter and quantum mechanics.",
+    "link": "https://www.feynmanlectures.caltech.edu/",
+    "category": "classical-mechanics-and-electromagnetism"
+  },
+  {
+    "id": "modern-physics-and-quantum-mechanics-5",
+    "name": "MIT OpenCourseWare: Quantum Physics I (8.04)",
+    "description": "This undergraduate course introduces the experimental basis of quantum mechanics, wave mechanics and Schrödinger’s equation in one and three dimensions. The course provides lecture notes, video lectures, assignments and exams.",
+    "link": "https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2016/",
+    "category": "modern-physics-and-quantum-mechanics"
+  }
+]
