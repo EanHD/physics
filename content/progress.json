@@ -7,7 +7,7 @@
     "module_states": {
       "01-calculus": {
         "status": "completed",
-        "last_accessed": "2025-09-13T21:52:50.621Z",
+        "last_accessed": "2025-09-13T23:09:24.120Z",
         "score": 0.9,
         "attempts": 2
       }
@@ -19,7 +19,7 @@
   "reviewItems": [
     {
       "module_id": "01-calculus",
-      "next_review": "2025-09-13T21:52:50.621Z",
+      "next_review": "2025-09-13T23:09:24.120Z",
       "interval_days": 1,
       "ease_factor": 2.5,
       "repetition": 0

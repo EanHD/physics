@@ -15,6 +15,10 @@ export function generateModulesFromResources() {
   const resourcesPath = path.join(process.cwd(), 'physics_study', 'study_resources.md')
   const contentDir = path.join(process.cwd(), 'content', 'modules')
   
+  console.log('Current working directory:', process.cwd())
+  console.log('Looking for resources at:', resourcesPath)
+  console.log('Resources file exists:', fs.existsSync(resourcesPath))
+  
   if (!fs.existsSync(resourcesPath)) {
     console.log('study_resources.md not found, skipping module generation')
     return
