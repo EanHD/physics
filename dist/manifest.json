@@ -1,29 +1,33 @@
 {
   "name": "Quantum Mechanics Study App",
-  "short_name": "Quantum Study",
+  "short_name": "QM Study",
   "description": "Learn quantum mechanics with interactive lessons and spaced repetition",
-  "start_url": "/",
+  "start_url": "/physics/",
   "display": "standalone",
-  "background_color": "#1f2937",
+  "background_color": "#ffffff",
   "theme_color": "#1f2937",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/vite.svg",
+      "src": "/physics/pwa-192x192.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/vite.svg", 
+      "src": "/physics/pwa-512x512.png", 
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png"
+    },
+    {
+      "src": "/physics/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
   "categories": ["education", "productivity"],
   "lang": "en-US",
   "dir": "ltr",
-  "scope": "/",
+  "scope": "/physics/",
   "prefer_related_applications": false
 }
